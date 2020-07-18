@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.gsck.midi.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="MIDI Device">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="97.0" prefWidth="800.0">
+                     <children>
+                        <ComboBox fx:id="MIDIInputDevice" layoutX="14.0" layoutY="32.0" onAction="#MIDIInputSelect" prefWidth="150.0" />
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="116.0" text="MIDI Input Device" />
+                        <Label layoutX="14.0" layoutY="61.0" prefHeight="17.0" prefWidth="116.0" text="MIDI Output Device" />
+                        <ComboBox fx:id="MIDIOutputDevice" layoutX="14.0" layoutY="77.0" onAction="#MIDIOutputSelect" prefWidth="150.0" />
+                        <Label layoutX="270.0" layoutY="14.0" prefHeight="17.0" prefWidth="116.0" text="Last MIDI message" />
+                        <Label fx:id="messageType" layoutX="270.0" layoutY="36.0" prefHeight="17.0" prefWidth="116.0" text="Type: Control Change" />
+                        <Label fx:id="messageNote" layoutX="270.0" layoutY="53.0" prefHeight="17.0" prefWidth="116.0" text="Note: Note" />
+                        <Label fx:id="messageValue" layoutX="270.0" layoutY="70.0" prefHeight="17.0" prefWidth="116.0" text="Value: Value" />
+                        <Separator prefHeight="4.0" prefWidth="116.0" />
+                        <Separator layoutX="268.0" layoutY="29.0" prefHeight="10.0" prefWidth="118.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Output">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>
